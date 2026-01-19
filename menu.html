@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MITHILA CRUNCH - Menu</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fff8f3 0%, #ffeede 45%, #ffe1cc 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Alpona Background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-radial-gradient(circle at center,
+          rgba(255, 185, 150, 0.25) 0px,
+          rgba(255, 185, 150, 0.25) 1px,
+          transparent 1px,
+          transparent 24px),
+        repeating-linear-gradient(45deg,
+          rgba(255, 210, 185, 0.18) 0px,
+          rgba(255, 210, 185, 0.18) 2px,
+          transparent 2px,
+          transparent 40px);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* ================= HEADER ================= */
+    .header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff8a5c, #ffd1b0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 6px 14px rgba(0,0,0,0.25),
+        0 0 0 4px #fff,
+        0 0 0 8px rgba(255, 200, 170, 0.35);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    .brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ff7a3d;
+      letter-spacing: 1px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      font-size: 15px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .nav a:hover {
+      color: #ff7a3d;
+    }
+
+    /* ================= PAGE TITLE ================= */
+    .page-title {
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+
+    .page-title h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: #ff7a3d;
+      margin-bottom: 10px;
+      font-size: 38px;
+    }
+
+    .page-title p {
+      color: #777;
+      font-size: 16px;
+    }
+
+    /* ================= MENU GRID ================= */
+    .menu-section {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .category {
+      margin-bottom: 60px;
+    }
+
+    .category h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: #ff7a3d;
+      margin-bottom: 24px;
+      border-left: 6px solid #ffb58a;
+      padding-left: 14px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
+    }
+
+    .menu-item {
+      background: white;
+      padding: 26px 24px 30px;
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      text-align: center;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .menu-item::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(255,200,170,0.45), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .menu-item h4 {
+      margin: 12px 0 6px;
+      color: #ff7a3d;
+      font-size: 18px;
+    }
+
+    .menu-item p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .add-btn {
+      padding: 10px 22px;
+      background: linear-gradient(135deg, #ff7a3d, #ffb58a);
+      border: none;
+      border-radius: 24px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+      transition: 0.3s;
+    }
+
+    .add-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      background: rgba(255,255,255,0.9);
+      padding: 24px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.1);
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 600px) {
+      .page-title h1 { font-size: 30px; }
+      .nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <div class="header">
+    <div class="brand">
+      <div class="logo">MC</div>
+      <div class="brand-name">MITHILA CRUNCH</div>
+    </div>
+
+    <div class="nav">
+      <a href="home.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="#">Cart</a>
+      <a href="index.html">Logout</a>
+    </div>
+  </div>
+
+  <!-- ================= PAGE TITLE ================= -->
+  <div class="page-title">
+    <h1>Our Menu</h1>
+    <p>Authentic Bengali & Mithila Special Dishes</p>
+  </div>
+
+  <!-- ================= MENU SECTION ================= -->
+  <div class="menu-section">
+
+    <!-- Veg Section -->
+    <div class="category">
+      <h2>Veg Specials</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h4>Veg Thali</h4>
+          <p>Rice, dal, sabji, papad, curd</p>
+          <div class="price">₹120</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+          <h4>Paneer Curry</h4>
+          <p>Soft paneer in rich gravy</p>
+          <div class="price">₹150</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+          <h4>Mixed Veg</h4>
+          <p>Seasonal fresh vegetables</p>
+          <div class="price">₹100</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Non-Veg Section -->
+    <div class="category">
+      <h2>Non-Veg Specials</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h4>Chicken Curry</h4>
+          <p>Spicy house special</p>
+          <div class="price">₹180</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+          <h4>Chicken Biryani</h4>
+          <p>Fragrant basmati rice & chicken</p>
+          <div class="price">₹220</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+          <h4>Fish Curry</h4>
+          <p>Traditional Bengali style</p>
+          <div class="price">₹200</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sweets Section -->
+    <div class="category">
+      <h2>Sweets & Desserts</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h4>Rasgulla</h4>
+          <p>Soft & juicy</p>
+          <div class="price">₹60</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+          <h4>Sandesh</h4>
+          <p>Traditional Bengali sweet</p>
+          <div class="price">₹80</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+          <h4>Payesh</h4>
+          <p>Rice pudding with nuts</p>
+          <div class="price">₹70</div>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="footer">
+    © 2026 MITHILA CRUNCH • Fresh & Homemade Food
+  </div>
+
+</body>
+</html>

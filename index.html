@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MITHILA CRUNCH - Login</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Avatar Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+
+      <!-- Avatar Icon -->
+      <div class="avatar">
+        <i class="fa-solid fa-user"></i>
+      </div>
+
+      <!-- SIGN IN -->
+      <div id="loginBox">
+        <h2>MITHILA CRUNCH</h2>
+        <h3>Member Login</h3>
+
+        <input type="text" id="loginMobile" placeholder="Mobile Number">
+        <input type="password" id="loginPassword" placeholder="Password">
+
+        <button onclick="login()">Sign In</button>
+
+        <p class="link" onclick="showForgot()">Forgot Password?</p>
+        <p class="link" onclick="showSignup()">Don't have an account? Sign Up</p>
+      </div>
+
+      <!-- SIGN UP -->
+      <div id="signupBox" class="hidden">
+        <h2>MITHILA CRUNCH</h2>
+        <h3>Create Account</h3>
+
+        <input type="text" id="fullName" placeholder="Full Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="mobile" placeholder="Mobile Number (10 digit)">
+        <input type="password" id="password" placeholder="Password">
+        <textarea id="address" placeholder="Full Address"></textarea>
+
+        <button onclick="signup()">Sign Up</button>
+
+        <p class="link" onclick="showLogin()">Already have an account? Sign In</p>
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+      <div id="forgotBox" class="hidden">
+        <h2>MITHILA CRUNCH</h2>
+        <h3>Forgot Password</h3>
+
+        <input type="text" id="forgotMobile" placeholder="Mobile Number">
+        <button onclick="sendUniqueId()">Send Unique ID to Email</button>
+
+        <input type="text" id="uniqueIdInput" placeholder="Paste Unique ID here">
+        <button onclick="verifyUniqueId()">Verify & Login</button>
+
+        <p class="link" onclick="showLogin()">Back to Login</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
